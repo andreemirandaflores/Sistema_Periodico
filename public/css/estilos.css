@@ -1,0 +1,314 @@
+/* =========================
+   RESET Y TIPOGRAFÍA
+========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #FFFFFF;
+    color: #212529;
+    line-height: 1.5;
+}
+
+h1, h2, h3 {
+    margin-bottom: 15px;
+    color: #0B1E5D;
+}
+
+section {
+    margin-bottom: 40px;
+}
+
+/* =========================
+   BOTONES
+========================= */
+.btn {
+    cursor: pointer;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Botón primario */
+.btn-primario {
+    background-color: #0B1E5D;
+    color: #FFFFFF;
+}
+
+.btn-primario:hover {
+    background-color: #081540;
+}
+
+/* Botón secundario */
+.btn-secundario {
+    background-color: #FFFFFF;
+    color: #0B1E5D;
+    border: 2px solid #0B1E5D;
+}
+
+.btn-secundario:hover {
+    background-color: #0B1E5D;
+    color: #FFFFFF;
+}
+
+/* Botón aceptar */
+.btn-aceptar {
+    background-color: #FF6B00;
+    color: #FFFFFF;
+}
+
+.btn-aceptar:hover {
+    background-color: #e55b00;
+}
+
+/* Botón cancelar */
+.btn-cancelar {
+    background-color: #FFFFFF;
+    color: #FF6B00;
+    border: 2px solid #FF6B00;
+}
+
+.btn-cancelar:hover {
+    background-color: #FF6B00;
+    color: #FFFFFF;
+}
+
+/* =========================
+   INPUTS, TEXTAREA, SELECT
+========================= */
+.input {
+    display: block;
+    width: 100%;
+    max-width: 400px;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.input:focus {
+    outline: none;
+    border-color: #0B1E5D;
+    box-shadow: 0 0 5px rgba(11, 30, 93, 0.5);
+}
+
+.textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.select {
+    background-color: #FFFFFF;
+}
+
+/* =========================
+   CHECKBOXES Y RADIOS
+========================= */
+.checkbox, .radio {
+    margin-right: 8px;
+    cursor: pointer;
+}
+
+/* =========================
+   SWITCH / TOGGLE
+========================= */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 26px;
+    margin-bottom: 15px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: #ccc;
+    border-radius: 34px;
+    transition: 0.4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    border-radius: 50%;
+    transition: 0.4s;
+}
+
+.switch input:checked + .slider {
+    background-color: #0B1E5D;
+}
+
+.switch input:checked + .slider:before {
+    transform: translateX(24px);
+}
+
+/* =========================
+   TABLAS
+========================= */
+.tabla {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+.tabla th, .tabla td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+}
+
+.tabla th {
+    background-color: #0B1E5D;
+    color: #FFFFFF;
+}
+
+.tabla tbody tr:hover {
+    background-color: #f2f2f2;
+}
+
+/* =========================
+   CARDS
+========================= */
+.card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.card-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.card-text {
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+/* =========================
+   ALERTAS MODERNAS
+========================= */
+.alert {
+    position: relative;
+    padding: 15px 20px 15px 50px;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    font-weight: 500;
+    color: #FFFFFF;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.2s, opacity 0.2s;
+}
+
+.alert::before {
+    content: '';
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 18px;
+}
+
+/* Exito */
+.alert-exito {
+    background: linear-gradient(135deg, #28a745, #2ecc71);
+}
+
+.alert-exito::before {
+    content: '✔';
+}
+
+/* Error */
+.alert-error {
+    background: linear-gradient(135deg, #dc3545, #e74c3c);
+}
+
+.alert-error::before {
+    content: '✖';
+}
+
+/* Info */
+.alert-info {
+    background: linear-gradient(135deg, #17a2b8, #3498db);
+}
+
+.alert-info::before {
+    content: 'ℹ';
+}
+
+/* Warning */
+.alert-warning {
+    background: linear-gradient(135deg, #ffc107, #f39c12);
+    color: #212529;
+}
+
+.alert-warning::before {
+    content: '⚠';
+}
+
+/* Animación al aparecer */
+.alert {
+    opacity: 0;
+    transform: translateY(-10px);
+    animation: alertFadeIn 0.4s forwards;
+}
+
+@keyframes alertFadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================
+   FORMULARIO
+========================= */
+.formulario label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.form-actions {
+    margin-top: 15px;
+}
+
+.form-actions .btn {
+    margin-right: 10px;
+}
+
+/* =========================
+   RESPONSIVIDAD BÁSICA
+========================= */
+@media (max-width: 600px) {
+    .input, .select, .textarea {
+        width: 100%;
+    }
+    .tabla th, .tabla td {
+        font-size: 14px;
+    }
+}

@@ -1,0 +1,202 @@
+/* ========================
+   RESET Y CONFIGURACIÓN BASE
+======================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    background-color: #f5f5f5;
+}
+
+/* ========================
+   SIDEBAR
+======================== */
+.sidebar {
+    width: 250px;
+    background: linear-gradient(180deg, #0b3d91, #1565c0);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: width 0.3s ease;
+    min-height: 100vh;
+    box-shadow: 2px 0 8px rgba(0,0,0,0.1);
+}
+
+.sidebar-logo {
+    text-align: center;
+    padding: 0px;
+}
+
+.sidebar-logo img {
+  width: 60%;         /* Ocupa el 80% del ancho del contenedor del sidebar */
+  max-width: 200px;   /* Limita su tamaño máximo */
+  height: auto;       /* Mantiene la proporción */
+  display: block;
+  margin: 10px auto;  /* Centrado y con espacio arriba/abajo */
+  object-fit: contain; /* No se recorta ni deforma */
+  border-radius: 8px; /* Opcional, para darle un estilo moderno */
+}
+
+.sidebar-profile {
+    text-align: center;
+    padding: 20px;
+    border-top: 1px solid rgba(255,255,255,0.2);
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+.profile-avatar img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    border: 2px solid #fff;
+}
+
+.profile-info .profile-name {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 3px;
+}
+
+.profile-info .profile-role {
+    font-size: 0.9rem;
+    color: #ffd37f;
+}
+
+.sidebar-nav ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.sidebar-nav li {
+    margin-bottom: 10px;
+}
+
+.sidebar-nav a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #fff;
+    padding: 12px 20px;
+    border-radius: 6px;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.sidebar-nav a i {
+    margin-right: 10px;
+}
+
+.sidebar-nav a:hover {
+    background: rgba(255,255,255,0.2);
+    transform: translateX(5px);
+}
+
+/* ========================
+   MAIN Y NAVBAR
+======================== */
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: #f5f5f5;
+}
+
+.topnav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border-bottom: 2px solid #e5e5e5;
+}
+
+.topnav h1 {
+    font-size: 1.5rem;
+    color: #0b3d91;
+}
+
+.topnav-right button {
+    margin-left: 10px;
+}
+
+/* ========================
+   BOTONES
+======================== */
+.btn-primario {
+    background-color: #0b3d91;
+    color: #fff;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.btn-primario:hover {
+    background-color: #1565c0;
+    transform: translateY(-2px);
+}
+
+.btn-secundario {
+    background-color: #ff6f00;
+    color: #fff;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.btn-secundario:hover {
+    background-color: #ff8f00;
+    transform: translateY(-2px);
+}
+
+/* ========================
+   CONTENIDO DEL DASHBOARD
+======================== */
+.dashboard-body {
+    padding: 30px;
+    flex: 1;
+}
+
+/* ========================
+   RESPONSIVE
+======================== */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 200px;
+    }
+
+    .topnav h1 {
+        font-size: 1.2rem;
+    }
+
+    .sidebar-nav a {
+        padding: 10px 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .sidebar {
+        display: none;
+    }
+
+    .topnav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .topnav-right {
+        margin-top: 10px;
+    }
+}
