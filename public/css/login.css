@@ -279,3 +279,167 @@ footer a {
 .right-panel-active .sign-up-container {
   transition: transform 0.6s ease-in-out;
 }
+
+/* Solo mostrar escritorio en pantallas grandes */
+.mobile-view {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .desktop-view {
+        display: none;
+    }
+    .mobile-view {
+        display: block;
+    }
+}
+
+
+/*Mobile*/
+/* Contenedor principal */
+.mobile-auth-container {
+    width: 90%;
+    max-width: 400px;
+    margin: 0 auto;
+    background: linear-gradient(to right, #09073a, #455bb3);
+    padding: 30px 20px;
+    border-radius: 12px;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Logo y texto */
+.mobile-logo {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.mobile-logo img {
+    width: 120px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.mobile-logo p {
+    font-size: 0.95rem;
+    line-height: 1.4;
+    color: #f0f0f0;
+}
+
+/* Formularios */
+.mobile-form {
+    width: 100%;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s ease;
+}
+
+.mobile-form.active {
+    display: flex;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.mobile-form h2 {
+    margin-bottom: 15px;
+}
+
+/* Grupo de input */
+.group-input {
+    display: flex;
+    width: 100%;
+    margin-bottom: 12px;
+}
+
+.group-input i {
+    background: #0b3d91;
+    padding: 0.8rem;
+    color: #fff;
+    border-radius: 8px 0 0 8px;
+}
+
+.group-input input {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid #0b3d91;  /* borde azul igual que escritorio */
+    border-radius: 0 8px 8px 0;
+    outline: none;
+    color: #000;
+    background-color: #fff;
+}
+
+/* Botones */
+.mobile-form button {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 25px;
+    border: none;
+    background: #0b3d91;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.mobile-form button:hover {
+    background: #1565c0;
+}
+
+/* Enlace toggle */
+.toggle-form {
+    color: #ffd37f;
+    font-size: 0.9rem;
+    text-decoration: underline;
+    cursor: pointer;
+    margin-top: 5px;
+    display: inline-block;
+    transition: color 0.3s ease;
+}
+
+.toggle-form:hover {
+    color: #fff;
+}
+
+/* Mensajes de error */
+.errors {
+    margin: 5px 0;
+    color: #ffaaaa;
+    font-size: 0.85rem;
+    text-align: center;
+}
+
+/* Estilo exclusivo para móviles */
+@media (max-width: 768px) {
+    body {
+        background: linear-gradient(to right, #09073a, #455bb3);
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: column;
+        padding-top: 50px; /* separa el logo del borde superior */
+        height: 100vh;
+    }
+
+    .container {
+        width: 90%;
+        max-width: 400px;
+        min-height: auto;
+        background: transparent; /* elimina degradado del container */
+        box-shadow: none;
+        border-radius: 0;
+        padding: 0;
+    }
+
+    /* Opcional: centra logo y formularios */
+    .logo-mobile {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+}

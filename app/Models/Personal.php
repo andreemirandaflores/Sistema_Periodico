@@ -9,8 +9,8 @@ class Personal extends Authenticatable
 {
     use Notifiable;
 
-    protected $table = 'personals';      // Nombre de la tabla
-    protected $primaryKey = 'CodPersonal'; // Clave primaria
+    protected $table = 'personals';
+    protected $primaryKey = 'CodPersonal';
     public $incrementing = true;
     protected $keyType = 'int';
 
@@ -31,5 +31,10 @@ class Personal extends Authenticatable
     public function cargo()
     {
         return $this->belongsTo(Cargo::class, 'CodCargo', 'CodCargo');
+    }
+
+    public function ventas()
+    {
+        return $this->hasMany(VentaAviso::class, 'CodPersonal', 'CodPersonal');
     }
 }

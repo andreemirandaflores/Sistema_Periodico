@@ -6,6 +6,13 @@
     <title>@yield('title', 'Dashboard – La Patria')</title>
     <link rel="stylesheet" href="{{ asset('css/estilos.css') }}">
     <link rel="stylesheet" href="{{ asset('css/dashboard.css') }}">
+    <link rel="icon" type="image/x-icon" href="{{ asset('img/favicon.ico') }}">
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- jQuery UI -->
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
@@ -58,4 +65,15 @@
     </main>
 
 </body>
+<script>
+function openModal(id){
+    document.getElementById(id).style.display = 'block';
+}
+function closeModal(id){
+    document.getElementById(id).style.display = 'none';
+}
+</script>
+    @yield('scripts')
+</body>
 </html>
+

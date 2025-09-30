@@ -10,16 +10,30 @@ return new class extends Migration {
             $table->id('CodVenta');
             $table->date('FechaVenta');
             $table->time('HoraVenta');
+            $table->decimal('Total', 10, 2)->default(0);
+
+            // Cliente
             $table->string('NIT', 14);
-
-            $table->unsignedBigInteger('CodPersonal'); // FK personalizada
-            $table->foreign('CodPersonal')
-                  ->references('CodPersonal')
-                  ->on('personals')
-                  ->onDelete('cascade');
-
             $table->foreign('NIT')->references('NIT')->on('clientes');
+
+            // Personal
+            $table->unsignedBigInteger('CodPersonal');
+            $table->foreign('CodPersonal')
+                ->references('CodPersonal')
+                ->on('personals')
+                ->onDelete('cascade');
+
+            // Facturación
+            $table->integer('NumeroFactura');        // correlativo
+            $table->string('MetodoPago', 20);        // "Efectivo", "Tarjeta", etc.
+            $table->string('Cuf', 100)->nullable();  // generado
+            $table->string('Cufd', 100)->nullable(); // generado
+            $table->integer('CodigoSucursal')->default(0);
+            $table->integer('CodigoPuntoVenta')->nullable();
+
+            $table->timestamps();
         });
+
     }
 
     public function down(): void {
