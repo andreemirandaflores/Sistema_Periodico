@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
       cell.appendChild(span);
 
       const fechaStr = `${anio}-${String(mes + 1).padStart(2, '0')}-${String(d).padStart(2, '0')}`;
-      cell.dataset.fecha = fechaStr; // <-- asignamos data-fecha
+      cell.dataset.fecha = fechaStr;
 
       const fechaDia = new Date(anio, mes, d);
       const esPasado = fechaDia < new Date(hoy.getFullYear(), hoy.getMonth(), hoy.getDate());
@@ -44,14 +44,14 @@ document.addEventListener('DOMContentLoaded', () => {
       if (esPasado) {
         cell.classList.add('inactivo');
       } else {
-        if (fechas.has(fechaStr)) cell.classList.add('dia-activo'); // <-- clase dia-activo
+        if (fechas.has(fechaStr)) cell.classList.add('seleccionado');
 
         cell.addEventListener('click', () => {
-          if (cell.classList.contains('dia-activo')) {
-            cell.classList.remove('dia-activo');
+          if (cell.classList.contains('seleccionado')) {
+            cell.classList.remove('seleccionado');
             fechas.delete(fechaStr);
           } else {
-            cell.classList.add('dia-activo');
+            cell.classList.add('seleccionado');
             fechas.add(fechaStr);
           }
           syncFechas();
@@ -61,12 +61,13 @@ document.addEventListener('DOMContentLoaded', () => {
       calendario.appendChild(cell);
     }
 
+    // Selecciona automáticamente el día de hoy si no hay fechas
     if (fechas.size === 0 && mes === hoy.getMonth() && anio === hoy.getFullYear()) {
       const hoyStr = `${anio}-${String(mes + 1).padStart(2, '0')}-${String(hoy.getDate()).padStart(2, '0')}`;
       fechas.add(hoyStr);
       const indexCell = offset + hoy.getDate() - 1;
       const cellHoy = calendario.children[indexCell];
-      if (cellHoy) cellHoy.classList.add('dia-activo');
+      if (cellHoy) cellHoy.classList.add('seleccionado');
       syncFechas();
     }
   }
